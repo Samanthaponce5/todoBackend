@@ -3,12 +3,12 @@ class ListsController < ApplicationController
 
 def index 
     @lists = List.all
-    render json: @lists
+    render json: @lists, except: [:created_at,:updated_at]
 end
 
 def show 
     @list = list.find(params[:id])
-    render json: @list
+    render json: @list, except: [:created_at,:updated_at]
 end
 
 end
